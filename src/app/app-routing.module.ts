@@ -9,6 +9,7 @@ const routs: Routes = [
   {path: 'favorite-page', component: FavoritesPageComponent},
   {path: 'movie-description', component: MovieDescriptionComponent},
   {path: 'movie-description/:id', component: MovieDescriptionComponent},
+  {path: 'movie-description/:value.id', component: MovieDescriptionComponent},
 ];
 
 @NgModule({

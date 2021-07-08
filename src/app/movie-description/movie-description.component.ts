@@ -7,12 +7,14 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './movie-description.component.html',
   styleUrls: ['./movie-description.component.scss']
 })
+
 export class MovieDescriptionComponent implements OnInit {
+  public doStep: any;
+  public test: any = [];
   public arr: any = [];
   public movieData: any;
   fullD: any = [];
   oneMovieIndex: any = [];
-  num = 1;
   constructor(
     private serviceLogic: Services, private route: ActivatedRoute, private rout: Router) { }
   ngOnInit(): void {
@@ -21,18 +23,39 @@ export class MovieDescriptionComponent implements OnInit {
   }
   loadDataIn(): void {
     this.serviceLogic.$oneMovieById.subscribe((data) => {
-      this.movieData = data;
+      this.movieData = data; // one movie id from movies - list
     });
   }
   allData(): void {
   this.serviceLogic.$allMoviesId.subscribe((fullData) => {
-    this.fullD = fullData;
+    this.fullD = fullData; // movies array (full)
   });
   }
   nextMovie(): void {
-    // const arr: any = [];
-    // this.oneMovieIndex = this.fullD.indexOf(this.movieData);
-    // this.arr.push(this.oneMovieIndex);
-    this.rout.navigate([`movie-description/${this.arr}`]);
+    this.oneMovieIndex = this.fullD.indexOf(this.movieData);
+    this.fullD.forEach((item, index, arr) => {
+      if (arr[index] === arr[this.oneMovieIndex]) {
+        ++index;
+        this.serviceLogic.$oneMovie.next(arr[index]);
+        const {value} = this.serviceLogic.$oneMovie;
+        this.movieData = value;
+        this.rout.navigate([`movie-description/${value.id}`]);
+      }
+    });
   }
 }
+
+
+
+
+
+
+
+// // this.doStep = this.fullD.find((item, index) => {
+// //   if (index === this.oneMovieIndex) {
+// //     this.serviceLogic.$oneMovie.next(item);
+// //     const {value} = this.serviceLogic.$oneMovie;
+// //     console.log(value.id);
+// //     this.rout.navigate([`movie-description/${value.id}`]);
+// //   }
+// });

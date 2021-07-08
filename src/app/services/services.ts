@@ -10,6 +10,7 @@ import {BehaviorSubject} from 'rxjs';
 export class Services {
   public $allMoviesId: any = new BehaviorSubject(null);
   public $oneMovieById: any = new BehaviorSubject(null);
+  public $oneMovie: any = new  BehaviorSubject(null);
   constructor(
     private http: HttpClient
   ) {}
