@@ -5,19 +5,24 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
-
+import { MovieDescriptionComponent } from './movie-description/movie-description.component';
+import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MoviesListComponent,
+    MovieDescriptionComponent,
+    FavoritesPageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

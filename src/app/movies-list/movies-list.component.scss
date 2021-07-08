@@ -3,52 +3,34 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main-title {
+  margin-bottom: 10px;
+}
+
+.movieTitle {
+  display: none;
+}
 
 .films {
   padding: 50px 0;
   color: #a9a9a9;
 }
 
-.main-title {
-  margin-bottom: 10px;
-}
-
-.movies__text {
-  position: absolute;
-  color: #fff;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.movies__block:hover .movies__text {
-  opacity: 1;
-  display: block;
-  transition: opacity 0.5s ease;
-  background-color: #000000;
-  width: 20px;
-  height: 50px;
-}
-
-.pages {
+.movie{
+  position: relative;
   display: flex;
-  width: 440px;
-  border: 1px solid  #a9a9a9;
-  color: #a9a9a9;
-  margin: 0 auto;
-
+  margin-bottom: 20px;
 }
 
-.pages__item {
-  border-right: 1px solid #a9a9a9;
-  padding: 10px;
-  margin: 0 auto;
-}
-
-.pages__item:last-child {
-  border-right: 0px;
-}
-
-.pages__item:hover {
-  color: #56BBA0;
-  font-weight: 800;
+.moviePicture {
+  width: 250px;
+  height: 350px;
+  -webkit-box-shadow: 0px 0px 19px 7px rgba(34, 60, 80, 0.23);
+  -moz-box-shadow: 0px 0px 19px 7px rgba(34, 60, 80, 0.23);
+  box-shadow: 0px 0px 19px 7px rgba(34, 60, 80, 0.23);
+  color: red;
 }

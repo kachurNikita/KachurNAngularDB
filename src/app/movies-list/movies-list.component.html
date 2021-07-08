@@ -1,11 +1,13 @@
 <section class="films">
-  <div class="movies display-flex">
-    <div class="movies__block" *ngFor="let m of movie">
-      <img src="http://image.tmdb.org/t/p/w342{{m.backdrop_path}}" alt="picture" class="picture">
-
+  <div class="container">
+    <h1 class="main-title">Latest Releases</h1>
+    <div class="movies display-flex">
+      <div *ngFor="let m of movies">
+        <div class="movie">
+          <img src="http://image.tmdb.org/t/p/w342{{m.poster_path}}" alt="picture" class="moviePicture" id="{{m.id}}" (click)="openMovie(m)">
+          <p class="movieTitle">{{m.title}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-
-

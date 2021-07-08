@@ -1,0 +1,58 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.nextMovie:hover  {
+  cursor: pointer;
+}
+
+.detailsInfoBtn {
+  display: block;
+  margin-left: auto;
+}
+
+.moviePosterImg {
+  height: 300px;
+}
+
+.movieDescription {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 0 0;
+}
+
+.movieInformation {
+  justify-content: space-around;
+}
+
+.slider {
+  z-index: 7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movieInformation {
+ display: flex;
+  padding: 50px;
+  z-index: 6;
+}
+
+.movieText {
+  width: 80%;
+}
+
+.detailsInfo {
+  width: 50%;
+}

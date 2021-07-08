@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieslistService} from './movieslist.service';
+import {Router} from '@angular/router';
+import {Services} from '../services/services';
 
 export interface Movie {
   backdrop_path: string;
@@ -16,15 +17,19 @@ export interface Movie {
 })
 
 export class MoviesListComponent implements OnInit {
-  public movie: Movie;
+  public movies: Movie[];
   constructor(
-    private serviceLogic: MovieslistService
+    private serviceLogic: Services, private router: Router
   ) {}
   ngOnInit(): void {
     this.serviceLogic.getData()
-      .subscribe(response => {
-        this.movie = response.results;
-        console.log(this.movie);
+      .subscribe(movies => {
+        this.movies = movies.results;
+        this.serviceLogic.$allMoviesId.next(this.movies);
       });
+  }
+  openMovie(e: any): void {
+    this.router.navigate([`movie-description/${e.id}`]);
+    this.serviceLogic.$oneMovieById.next(e);
   }
 }
