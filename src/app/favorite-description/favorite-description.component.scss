@@ -1,0 +1,119 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button {
+  outline: none;
+  background-color: inherit;
+  border: 2px solid #5C636D;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #5C636D;
+}
+
+.backgroundImageFav {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  filter: blur(5px);
+}
+
+.backToListFav {
+  display: flex;
+  align-items: center;
+}
+
+.nextMovieFav:hover  {
+  cursor: pointer;
+}
+
+.detailsInfoBtnFav {
+  display: block;
+  margin-left: auto;
+  font-size: 15px;
+}
+
+.detailsInfoBtnFav:hover {
+  cursor: pointer;
+}
+
+.moviePosterImgFav {
+  height: 300px;
+}
+
+.backToListArrowFav {
+  border: 1px solid #4E6478;
+  border-radius: 50%;
+  padding: 5px 9px;
+  margin-right: 35px;
+}
+
+.movieReleaseFav {
+  margin-top: 20px;
+}
+
+.nextMovieBlockFav {
+  display: flex;
+  align-items: center;
+}
+
+.nextMovieFav span {
+  margin-left: 35px;
+}
+
+.displayed {
+  padding-top: 50px;
+  z-index: 2;
+}
+
+.movieDescriptionFav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.movieInformationFav {
+  justify-content: space-around;
+}
+
+.sliderFav {
+  font-size: 20px;
+  z-index: 7;
+  display: flex;
+  justify-content: space-between;
+  color: #4E6478;
+}
+
+.movieInformationFav {
+  color: darkgrey;
+  display: flex;
+  padding: 50px;
+  z-index: 6;
+}
+
+.movieTextFav {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.detailsInfoFav {
+  width: 50%;
+  font-size: 20px;
+}
+
+.btnDisplay {
+  display: block;
+}
+
+.btnDisplayNone {
+  display: none;
+}
+
+.paginationFav {
+  display: block;
+  border: 1px solid red;
+  padding: 20px;
+  background-color: rebeccapurple;
+}

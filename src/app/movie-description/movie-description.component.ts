@@ -1,6 +1,7 @@
-import {Component,  OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Services} from '../services/services';
 import {ActivatedRoute, Router} from '@angular/router';
+import {any} from 'codelyzer/util/function';
 
 @Component({
   selector: 'app-movie-description',
@@ -9,10 +10,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 
 export class MovieDescriptionComponent implements OnInit {
+  // @Input() movieData
   public doStep: any;
-  public test: any = [];
+  public storageDataArr: any = [];
   public arr: any = [];
   public movieData: any;
+  public  emptyStorage: string;
+  public btnDisplay = 'btnDisplay';
+  public ifMovie: any;
+  public newId: any;
   fullD: any = [];
   oneMovieIndex: any = [];
   constructor(
@@ -23,7 +29,11 @@ export class MovieDescriptionComponent implements OnInit {
   }
   loadDataIn(): void {
     this.serviceLogic.$oneMovieById.subscribe((data) => {
-      this.movieData = data; // one movie id from movies - list
+      this.movieData = data;
+      this.route.params.subscribe((params) => {
+        this.checkFavoriteId(+params.id);
+      });
+      // one movie id from movies - list
     });
   }
   allData(): void {
@@ -38,24 +48,31 @@ export class MovieDescriptionComponent implements OnInit {
         ++index;
         this.serviceLogic.$oneMovie.next(arr[index]);
         const {value} = this.serviceLogic.$oneMovie;
+        if (value === undefined) {
+          return;
+        }
         this.movieData = value;
         this.rout.navigate([`movie-description/${value.id}`]);
       }
     });
   }
+  addToFavorites(data: any): void {
+    if (localStorage.getItem('movie')) {
+      this.storageDataArr = JSON.parse(localStorage.getItem('movie'));
+    }
+    this.storageDataArr.push(data);
+    localStorage.setItem('movie', JSON.stringify(this.storageDataArr));
+    this.btnDisplay = 'btnDisplayNone';
+  }
+  checkFavoriteId(id: number): void {
+    if (localStorage.getItem('movie')){
+      this.ifMovie = JSON.parse(localStorage.getItem('movie'));
+      const test: any =  this.ifMovie.find(item => item.id === id);
+      if (test) {
+        this.btnDisplay = 'btnDisplayNone';
+      }else {
+        this.btnDisplay = 'btnDisplay';
+      }
+    }
+  }
 }
-
-
-
-
-
-
-
-// // this.doStep = this.fullD.find((item, index) => {
-// //   if (index === this.oneMovieIndex) {
-// //     this.serviceLogic.$oneMovie.next(item);
-// //     const {value} = this.serviceLogic.$oneMovie;
-// //     console.log(value.id);
-// //     this.rout.navigate([`movie-description/${value.id}`]);
-// //   }
-// });

@@ -1,1 +1,28 @@
+<section>
+  <div class="container">
+    <h1 class="favoriteTitle">My favorite</h1>
+    <div class="movieWrapper" *ngFor="let mov of favoriteMovies">
+      <div class="favoriteWrapper">
+        <div class="poster">
+          <img src="http://image.tmdb.org/t/p/w342{{mov.poster_path}}"
+               alt="somePicture"
+               class="posterPicture"
+               id="{{mov.id}}"
+               (click)="showId(mov.id)" routerLink="/favorite-description">
+        </div>
+        <div class="favoriteWrapperInfo">
+          <div class="favoriteInfo">
+            <div class="infoWrapper">
+              <h1 class="favTitle">{{mov.title}}</h1>
+              <button class="unfavorite" (click)="deleteFromFavorites(mov.id)">Unfavorite</button>
+            </div>
+            <p class="favoriteText">
+              {{mov.overview}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 

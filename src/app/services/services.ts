@@ -11,11 +11,13 @@ export class Services {
   public $allMoviesId: any = new BehaviorSubject(null);
   public $oneMovieById: any = new BehaviorSubject(null);
   public $oneMovie: any = new  BehaviorSubject(null);
+  public $oneMovieFav: any = new  BehaviorSubject(null);
+  public page = 1;
   constructor(
     private http: HttpClient
   ) {}
   getData(): Observable<any> {
-    return  this.http.get<any>('https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US&page=');
+    return  this.http.get<any>('https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US&page=' + this.page);
   }
 }
 

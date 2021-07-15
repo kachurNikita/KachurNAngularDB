@@ -1,0 +1,56 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #F2F3F5;
+}
+
+section {
+  background-color: #F2F3F5;
+}
+
+.movieWrapper {
+  margin-bottom: 30px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.favoriteTitle {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #a9a9a9;
+}
+
+.favoriteWrapper {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favoriteWrapperInfo {
+  width: 60%;
+}
+
+.favTitle {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+
+.unfavorite {
+  margin-bottom: 15px;
+  margin-left: auto;
+}
+
+
+.favoriteText {
+  width: 80%;
+}
+
+
+.poster {
+  box-shadow: 0px 0px 19px 7px rgb(34 60 80 / 23%);
+}

@@ -1,15 +1,19 @@
+<img src="http://image.tmdb.org/t/p/w342{{movieData.backdrop_path}}" alt="{{movieData.title}}" class="backgroundImage">
 <div class="movieDescription container">
-  <img src="http://image.tmdb.org/t/p/w342{{movieData.poster_path}}" alt="{{movieData.title}}" class="backgroundImage">
   <div class="slider">
-    <div class="backToList">Back to list</div>
+    <div class="backToList" routerLink="/">Back to list</div>
     <div class="nextMovie" (click)="nextMovie()">Next movie</div>
   </div>
     <div class="movieInformation">
       <div class="moviePoster">
-        <img src="http://image.tmdb.org/t/p/w342{{movieData.poster_path}}" alt="{{movieData.title}}" id="{{movieData.id}}" class="moviePosterImg">
+        <img src="http://image.tmdb.org/t/p/w342{{movieData.poster_path}}"
+             alt="{{movieData.title}}"
+             id="{{movieData.id}}"
+             class="moviePosterImg">
       </div>
       <div class="detailsInfo">
-        <button class="detailsInfoBtn">Add to favorites</button>
+        <button class="detailsInfoBtn" (click)="addToFavorites(movieData)" [ngClass]="btnDisplay"
+        >Add to favorites</button>
         <div class="detailsInfoBlock">
           <h1 class="movieTitle">{{movieData.title}}</h1>
           <ul class="">

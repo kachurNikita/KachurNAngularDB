@@ -8,6 +8,7 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieDescriptionComponent } from './movie-description/movie-description.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import {AppRoutingModule} from './app-routing.module';
+import { FavoriteDescriptionComponent } from './favorite-description/favorite-description.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {AppRoutingModule} from './app-routing.module';
     MoviesListComponent,
     MovieDescriptionComponent,
     FavoritesPageComponent,
+    FavoriteDescriptionComponent,
   ],
   imports: [
     BrowserModule,

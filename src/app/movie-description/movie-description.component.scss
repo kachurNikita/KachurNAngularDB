@@ -3,14 +3,25 @@
   margin: 0 auto;
 }
 
+button {
+  outline: none;
+  background-color: inherit;
+  border: 2px solid #5C636D;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #5C636D;
+}
+
 .backgroundImage {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
   z-index: 1;
+  filter: blur(5px);
+}
+
+.backToList {
+  display: flex;
+  align-items: center;
 }
 
 .nextMovie:hover  {
@@ -20,17 +31,47 @@
 .detailsInfoBtn {
   display: block;
   margin-left: auto;
+  font-size: 15px;
+}
+
+.detailsInfoBtn:hover {
+  cursor: pointer;
 }
 
 .moviePosterImg {
   height: 300px;
 }
 
+.backToListArrow {
+  border: 1px solid #4E6478;
+  border-radius: 50%;
+  padding: 5px 9px;
+  margin-right: 35px;
+}
+
+.movieRelease {
+  margin-top: 20px;
+}
+
+.nextMovieBlock {
+  display: flex;
+  align-items: center;
+}
+
+.nextMovie span {
+  margin-left: 35px;
+}
+
+.displayed {
+  padding-top: 50px;
+  z-index: 2;
+}
+
 .movieDescription {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 50px 0 0 0;
+  padding-top: 50px;
 }
 
 .movieInformation {
@@ -38,21 +79,41 @@
 }
 
 .slider {
+  font-size: 20px;
   z-index: 7;
   display: flex;
   justify-content: space-between;
+  color: #4E6478;
 }
 
 .movieInformation {
- display: flex;
+  color: darkgrey;
+  display: flex;
   padding: 50px;
   z-index: 6;
 }
 
 .movieText {
+  margin-top: 20px;
   width: 80%;
 }
 
 .detailsInfo {
   width: 50%;
+  font-size: 20px;
+}
+
+.btnDisplay {
+  display: block;
+}
+
+.btnDisplayNone {
+  display: none;
+}
+
+.pagination {
+  display: block;
+  border: 1px solid red;
+  padding: 20px;
+  background-color: rebeccapurple;
 }

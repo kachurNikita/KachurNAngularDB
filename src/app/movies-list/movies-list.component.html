@@ -9,5 +9,14 @@
         </div>
       </div>
     </div>
+    <ul class="btns">
+      <li (click)="firstPage()">First</li>
+      <li class="prevBtn" (click)="prevPage()">Prev</li>
+      <li *ngFor="let i of btnsArray" (click)="renderBtns($event)">
+        {{i}}
+      </li>
+      <li class="btnNExt" (click)="toNext()">Next</li>
+      <li (click)="lastPage()">Last</li>
+    </ul>
   </div>
 </section>
