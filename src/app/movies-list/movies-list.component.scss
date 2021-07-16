@@ -11,6 +11,7 @@
 .main-title {
   margin-bottom: 15px;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .movieTitle {
@@ -23,7 +24,7 @@
   background-color: #F2F3F5;
 }
 
-.movie{
+.movie {
   position: relative;
   display: flex;
   margin-bottom: 20px;
@@ -41,8 +42,7 @@
 
 .btns {
   border: 1px solid black ;
-  padding: 10px;
-  width: 225px;
+  width: 400px;
   margin: 0 auto;
   display: flex;
 }
@@ -52,7 +52,16 @@
 }
 
 .btns li {
-  margin-right: 5px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
 }
 
+.btns li:hover {
+  color: #56BBA0;
+}
+
+.btns li:not(:last-child) {
+  border-right: 1px solid black;
+}
 

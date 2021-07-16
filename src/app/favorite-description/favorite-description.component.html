@@ -1,28 +1,28 @@
-<img src=""
+<img src="http://image.tmdb.org/t/p/w342{{currentFavMov.poster_path}}"
      alt=""
      class="backgroundImageFav">
 <div class="movieDescriptionFav container">
   <div class="sliderFav">
     <div class="backToListFav" routerLink="../favorite-page">Back to list</div>
-    <div class="nextMovieFav">Next movie</div>
+    <div class="nextMovieFav" (click)="nextFavMovie()">Next movie</div>
   </div>
   <div class="movieInformationFav">
     <div class="moviePosterFav">
-      <img src=""
-           alt=""
-           id=""
-           class="moviePosterImgFav">
+      <img src="http://image.tmdb.org/t/p/w342{{currentFavMov.poster_path}}"
+         alt=""
+         id=""
+         class="moviePosterImgFav">
     </div>
     <div class="detailsInfoFav">
-      <button class="detailsInfoBtnFav"
-      >Add to favorites</button>
       <div class="detailsInfoBlockFav">
         <h1 class="movieTitleFav">{{currentFavMov.title}}</h1>
         <ul class="">
           <li class="movieReleaseFav">
+            {{currentFavMov.release_date}}
           </li>
         </ul>
         <div class="movieTextFav">
+          {{currentFavMov.overview}}
         </div>
       </div>
     </div>

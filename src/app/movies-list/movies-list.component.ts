@@ -38,10 +38,6 @@ export class MoviesListComponent implements OnInit {
         this.serviceLogic.$allMoviesId.next(this.movies);
       });
   }
-  openMovie(e: any): void {
-    this.router.navigate([`movie-description/${e.id}`]);
-    this.serviceLogic.$oneMovieById.next(e);
-  }
   toNext(): void {
     const {total_pages} = this.bigObj;
     if (this.serviceLogic.page >= total_pages) {
@@ -71,6 +67,9 @@ export class MoviesListComponent implements OnInit {
   createdButtons(): void {
     this.serviceLogic.getData().subscribe(movie => {
       this.btns = movie.total_pages;
+      if (this.serviceLogic.page > this.btns - 4) {
+        return;
+      }
       this.btnsArray = [];
       if (this.serviceLogic.page <= this.btns) {
         for (let i = this.serviceLogic.page; i <= this.serviceLogic.page + 4; i++) {

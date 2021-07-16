@@ -9,6 +9,7 @@ import { MovieDescriptionComponent } from './movie-description/movie-description
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import {AppRoutingModule} from './app-routing.module';
 import { FavoriteDescriptionComponent } from './favorite-description/favorite-description.component';
+import { PosterComponent } from './poster/poster.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FavoriteDescriptionComponent } from './favorite-description/favorite-de
     MovieDescriptionComponent,
     FavoritesPageComponent,
     FavoriteDescriptionComponent,
+    PosterComponent,
   ],
   imports: [
     BrowserModule,

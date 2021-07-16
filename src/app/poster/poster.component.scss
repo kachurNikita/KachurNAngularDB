@@ -1,0 +1,35 @@
+.movie{
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 19px 7px rgb(34 60 80 / 23%);
+  position: relative;
+  z-index: 1 ;
+}
+
+.moviePicture {
+  width: 250px;
+  height: 350px;
+  -webkit-box-shadow: 0px 0px 19px 7px rgba(34, 60, 80, 0.23);
+  -moz-box-shadow: 0px 0px 19px 7px rgba(34, 60, 80, 0.23);
+  box-shadow: 0px 0px 19px 7px rgba(34, 60, 80, 0.23);
+  color: red;
+}
+
+.movieTitle {
+  display: none;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  color: blueviolet;
+  font-weight: bold;
+}
+
+.movie:hover .movieTitle{
+  display: block;
+}
+
+

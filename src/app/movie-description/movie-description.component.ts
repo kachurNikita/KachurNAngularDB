@@ -30,6 +30,7 @@ export class MovieDescriptionComponent implements OnInit {
   loadDataIn(): void {
     this.serviceLogic.$oneMovieById.subscribe((data) => {
       this.movieData = data;
+
       this.route.params.subscribe((params) => {
         this.checkFavoriteId(+params.id);
       });
@@ -52,7 +53,7 @@ export class MovieDescriptionComponent implements OnInit {
           return;
         }
         this.movieData = value;
-        this.rout.navigate([`movie-description/${value.id}`]);
+        this.rout.navigate(['movie-description', value.id]);
       }
     });
   }
@@ -67,7 +68,7 @@ export class MovieDescriptionComponent implements OnInit {
   checkFavoriteId(id: number): void {
     if (localStorage.getItem('movie')){
       this.ifMovie = JSON.parse(localStorage.getItem('movie'));
-      const test: any =  this.ifMovie.find(item => item.id === id);
+      const test: any = this.ifMovie.find(item => item.id === id);
       if (test) {
         this.btnDisplay = 'btnDisplayNone';
       }else {

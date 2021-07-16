@@ -16,7 +16,7 @@ button {
   position: absolute;
   width: 100%;
   z-index: 1;
-  filter: blur(5px);
+  filter: blur(8px);
 }
 
 .backToList {
@@ -93,9 +93,28 @@ button {
   z-index: 6;
 }
 
+.movieText:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #4E6478;
+  margin-bottom: 10px;
+}
+
 .movieText {
   margin-top: 20px;
   width: 80%;
+  color: #5C636D;
+}
+
+.movieText:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #4E6478;
+  margin-top: 10px;
 }
 
 .detailsInfo {

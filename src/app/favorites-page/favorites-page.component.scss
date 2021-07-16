@@ -18,6 +18,7 @@ section {
 }
 
 .favoriteTitle {
+  padding-top: 20px;
   margin-bottom: 20px;
   font-size: 20px;
   color: #a9a9a9;
@@ -39,17 +40,20 @@ section {
   margin-bottom: 20px;
 }
 
-
 .unfavorite {
   margin-bottom: 15px;
   margin-left: auto;
+  outline: none;
+  background-color: inherit;
+  border: 2px solid #5C636D;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #5C636D;
 }
-
 
 .favoriteText {
   width: 80%;
 }
-
 
 .poster {
   box-shadow: 0px 0px 19px 7px rgb(34 60 80 / 23%);

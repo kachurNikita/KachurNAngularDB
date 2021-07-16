@@ -1,0 +1,8 @@
+<div class="movie">
+  <img src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"
+       alt="picture" class="moviePicture" id="{{movie.id}}"
+       (click)="openMovie(movie)">
+  <p class="movieTitle">
+    {{movie.title}}
+  </p>
+</div>
